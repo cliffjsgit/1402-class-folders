@@ -2,7 +2,7 @@
 
 import shelve
 
-exercises = ['91','92','93','94','95','96','97','98','99']
+exercises = ['91','92','93','94','95','96','97','98']
 loadedList = []
 db = shelve.open('chapter9.db', flag='c', writeback=True)
 db['loaded'] = {}
@@ -47,12 +47,7 @@ try:
     db['loaded']['98'] = True
 except:
     db['loaded']['98'] = False
-try:
-    import exercise99
-    db['loaded']['99'] = True
-except:
-    db['loaded']['99'] = False
-
+    
 db.sync()
 
 for exercise in exercises:
@@ -60,3 +55,5 @@ for exercise in exercises:
         loadedList.append(exercise)
 
 db.close()
+
+print(loadedList)

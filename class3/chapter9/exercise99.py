@@ -1,11 +1,16 @@
-
 #!/usr/bin/env python3
+
+__author__ = "Your Name"
 
 ###############################################################################
 #
-print("\nExercise 9.9\n")
+# Exercise 9.9
 #
-# Question 1
+#
+# Grading Guidelines:
+# - Variable 'results' should be a list that includes any numbers that match
+# the question. 
+#
 # 1. Here's another Car Talk Puzzler you can solve with a search  
 # (http://www.cartalk.com/content/puzzlers):
 # 
@@ -29,43 +34,18 @@ print("\nExercise 9.9\n")
 
 
 def str_fill(i, n):
-    """Returns i as a string with at least n digits.
-
-    i: int
-    n: int length
-
-    returns: string
-    """
     return str(i).zfill(n)
 
 
 def are_reversed(i, j):
-    """Checks if i and j are the reverse of each other.
-
-    i: int
-    j: int
-
-    returns:bool
-    """
     return str_fill(i, 2) == str_fill(j, 2)[::-1]
 
 
 def num_instances(diff, flag=False):
-    """Counts the number of palindromic ages.
-
-    Returns the number of times the mother and daughter have
-    palindromic ages in their lives, given the difference in age.
-
-    diff: int difference in ages
-    flag: bool, if True, prints the details
-    """
     daughter = 0
     count = 0
     while True:
         mother = daughter + diff
-
-        # assuming that mother and daughter don't have the same birthday,
-        # they have two chances per year to have palindromic ages.
         if are_reversed(daughter, mother) or are_reversed(daughter, mother+1):
             count = count + 1
             if flag:
@@ -77,13 +57,6 @@ def num_instances(diff, flag=False):
     
 
 def check_diffs():
-    """Finds age differences that satisfy the problem.
-
-    Enumerates the possible differences in age between mother
-    and daughter, and for each difference, counts the number of times
-    over their lives they will have ages that are the reverse of
-    each other.
-    """
     diff = 10
     while diff < 70:
         n = num_instances(diff)
@@ -96,4 +69,4 @@ check_diffs()
 
 print()
 print('daughter  mother')
-num_instances(18, True)
+num_instances(17, True)
