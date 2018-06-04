@@ -63,4 +63,4 @@ def main():
     return answer
 
 if __name__ == '__main__':
-    main()
+    print(main()[1])

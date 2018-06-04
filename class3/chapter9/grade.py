@@ -88,7 +88,8 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '9.2':
-        if exercise92.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+        answer = exercise92.main()
+        if (answer[0] > 37264 and answer[0] < 38017) and (answer[1] > 28 and answer[1] < 38):
             db['submitted'][assignment] = True
             submit('exercise92.py')
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
