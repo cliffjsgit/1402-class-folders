@@ -57,8 +57,6 @@ db.sync()
 
 for exercise in exercises:
     if db['loaded'][exercise]:
-        print(db['loaded'][exercise])
         loadedList.append(exercise)
-print(loadedList)
 
 db.close()

@@ -29,14 +29,12 @@ def uses_all(word, letters):
             return False
     return True
 
-
 fin = open('words.txt')
 count = 0
 
 for line in fin:
     word = line.strip()
     if uses_all(word, 'a e i o u y') == True:
-        print(word)
         count += 1
 
 answer2 = count

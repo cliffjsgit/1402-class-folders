@@ -3,7 +3,9 @@
 __author__ = "Your Name"
 
 ###############################################################################
+#
 # Exercise 9.6
+#
 #
 # Grading Guidelines:
 # - No answer variables needed. Grading script will call function.
