@@ -45,4 +45,4 @@ print("Answer:\t{:03.2f}\n".format(answer1))
 #
 answer1=((42*60)+42)/(10/1.61)/60
 answer2=60/answer1
-print("Min per mile:\t{:03.2f}\nMPH:\t\t{:03.2f}\n".format(answer1,answer2))    
+print("Min per mile:\t{:03.2f}\nMPH:\t\t{:03.2f}\n".format(answer1,answer2))

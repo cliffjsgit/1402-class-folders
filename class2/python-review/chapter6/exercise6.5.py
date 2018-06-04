@@ -21,4 +21,3 @@ def gcd(a, b):
 print(gcd(160, 30))
 print(gcd(45, 300))
 print(gcd(16, 8))
-

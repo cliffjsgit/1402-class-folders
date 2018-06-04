@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
+# Exercise 9.6
 #
-print("\nExercise 9.6\n")
+# Grading Guidelines:
+# - No answer variables needed. Grading script will call function.
+# - Function 'is_abecedarian' should return boolean True/False depending on if
+# only the letters specified are in the word. 
 #
-# Question 1
 # 1. Write a function called is_abecedarian that returns True if the letters in
-# a word appear in alphabetical order (double letters are ok). How many 
-# abecedarian words are there?
+# a word appear in alphabetical order (double letters are ok).
 # 
+
 def is_abecedarian(word):
     previous_letter = word[0]
     for letter in word:

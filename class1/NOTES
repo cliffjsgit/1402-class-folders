@@ -1,13 +1,26 @@
-xiaolin == chaoling (Ling)
+Time: ? minutes
+Slides: http://coder.run/1402-class1
+Topics: 
+- Introductions
+- Syllabus: https://coder.run/1402-syllabus
+- Course Resources
+    - GitHub
+    - Cloud9 (AWS)
+- Git
+    - What is version control?
+    - What is Git?
+    - What is GitHub?
+    - Using Git day-to-day
+    - Collaborating online with Github
+- Using Git Day-to-Day
+- Labs: https://coder.run/1402-git
+    - Lab 1 - Time: 8:10- minutes
+    - Lab 2 - Time: ? minutes
+    - Lab 3 - Time: ? minutes
 
-Beginner content (such as git clone and such) not too easy for those without experience. Maybe break down better? Gifs?
-
-Warn in initial email first day will be a lot of new stuff and a little python
-
-add note for how to get out of vi when doing lab 1 - git log
-
-check to make sure lab 1 explains purpose of user.name and user.email
-
-lab 2, start in ~/workspace (specify)
-
-For all labs, cover the preview of the markdown file better... right click preview. 
+TODO:
+- N/A
+    
+Improvements:
+lab 1 git log --- q
+lab 2 workspace should be environment
