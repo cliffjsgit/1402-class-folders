@@ -51,5 +51,3 @@ def lowest_avoidance():
     for letter in top5:
         top5l.append(letter[0])
     return top5l
-    
-print(lowest_avoidance())
