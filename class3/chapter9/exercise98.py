@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 9.8\n")
+# Exercise 9.8
 #
-# Question 1
+#
+# Grading Guidelines:
+# - Variable 'results' should be a list that includes any numbers that match
+# the question. 
+#
 # 1. Here's another Car Talk Puzzler (http://www.cartalk.com/content/puzzlers):
 # 
 # "I was driving on the highway the other day and I happened to notice my 
@@ -21,12 +27,14 @@ print("\nExercise 9.8\n")
 #
 # "The question is, what was on the odometer when I first looked?"
 #
-# Write a Python program that tests all the six-digit numbers and prints any 
-# numbers that satisfy these requirements.
+# Write a Python program that tests all the six-digit numbers and add any 
+# numbers that satisfy these requirements to a list "results".
 #
+
+results = []
+
 def is_palindrome(word):
     return word == word[::-1]
-
 
 def searched_number(number):
     if is_palindrome(str(number)[2:]):
@@ -39,7 +47,8 @@ def searched_number(number):
                     return True
     return False
 
-
 for num in range(100000, 1000000):
     if searched_number(num):
-        print(num)
+        results.append(num)
+        
+print(results)
