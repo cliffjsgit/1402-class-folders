@@ -2,58 +2,247 @@
 
 import shelve
 
-exercises = ['91','92','93','94','95','96','97','98']
+exercises = ['9.1','9.2','9.3','9.4','9.5','9.6','9.7','9.8']
 loadedList = []
 db = shelve.open('chapter9.db', flag='c', writeback=True)
 db['loaded'] = {}
+if 'submitted' not in db:
+    db['submitted'] = {}
 
 try:
     import exercise91
-    db['loaded']['91'] = True
+    db['loaded']['9.1'] = True
 except:
-    db['loaded']['91'] = False
+    db['loaded']['9.1'] = False
 try:
     import exercise92
-    db['loaded']['92'] = True
+    db['loaded']['9.2'] = True
 except:
-    db['loaded']['92'] = False
+    db['loaded']['9.2'] = False
 try:
     import exercise93
-    db['loaded']['93'] = True
+    db['loaded']['9.3'] = True
 except:
-    db['loaded']['93'] = False
+    db['loaded']['9.3'] = False
 try:
     import exercise94
-    db['loaded']['94'] = True
+    db['loaded']['9.4'] = True
 except:
-    db['loaded']['94'] = False
+    db['loaded']['9.4'] = False
 try:
     import exercise95
-    db['loaded']['95'] = True
+    db['loaded']['9.5'] = True
 except:
-    db['loaded']['95'] = False
+    db['loaded']['9.5'] = False
 try:
     import exercise96
-    db['loaded']['96'] = True
+    db['loaded']['9.6'] = True
 except:
-    db['loaded']['96'] = False
+    db['loaded']['9.6'] = False
 try:
     import exercise97
-    db['loaded']['97'] = True
+    db['loaded']['9.7'] = True
 except:
-    db['loaded']['97'] = False
+    db['loaded']['9.7'] = False
 try:
     import exercise98
-    db['loaded']['98'] = True
+    db['loaded']['9.8'] = True
 except:
-    db['loaded']['98'] = False
+    db['loaded']['9.8'] = False
     
 db.sync()
 
-for exercise in exercises:
-    if db['loaded'][exercise]:
-        loadedList.append(exercise)
+def menu():
+    while True:
+        for exercise in loadedList:
+            if exercise in db['submitted']:
+                print('[x] Exercise ' + exercise)
+            else:
+                print('[ ] Exercise ' + exercise)
+        str_in = input('Exercise (e.g. 9.1): ')
+        if str_in in loadedList:
+            grade(str_in)
+            break
+        else:
+            print('Incorrect response. Only enter the exercise number. Example: "9.1" (no quotes).')
+            
+def grade(assignment):
+    if assignment == '9.1':
+        if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+            db['submitted'][assignment] = True
+            submit('exercise91.py')
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submit('exercise91.py')
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+    elif assignment == '9.2':
+        if exercise92.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+            db['submitted'][assignment] = True
+            submit('exercise92.py')
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submit('exercise92.py')
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+    elif assignment == '9.3':
+        if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+            db['submitted'][assignment] = True
+            submit('exercise91.py')
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submit('exercise91.py')
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+    elif assignment == '9.4':
+        if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+            db['submitted'][assignment] = True
+            submit('exercise91.py')
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submit('exercise91.py')
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+    elif assignment == '9.5':
+        if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+            db['submitted'][assignment] = True
+            submit('exercise91.py')
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submit('exercise91.py')
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+    elif assignment == '9.6':
+        if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+            db['submitted'][assignment] = True
+            submit('exercise91.py')
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submit('exercise91.py')
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()  
+    elif assignment == '9.7':
+        if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+            db['submitted'][assignment] = True
+            submit('exercise91.py')
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submit('exercise91.py')
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+    elif assignment == '9.8':
+        if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+            db['submitted'][assignment] = True
+            submit('exercise91.py')
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submit('exercise91.py')
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+    else:
+        print('This should not have happened. Let your instructor know.')
+    db.sync()
+            
+def submit(file):
+    pass
+            
+def main():
+    for exercise in exercises:
+        if db['loaded'][exercise]:
+            loadedList.append(exercise)
+    
+    print('The following exercises have been loaded: ' + ', '.join(loadedList) + '. Which would you like to grade?')
+    menu()
+
+
+main()
 
 db.close()
-
-print(loadedList)
