@@ -23,8 +23,7 @@ __author__ = "Your Name"
 # aeiouy?
 #
 def uses_all(word, letters):
-    required = letters.split()
-    for letter in required:
+    for letter in letters:
         if letter not in word:
             return False
     return True
@@ -34,7 +33,7 @@ count = 0
 
 for line in fin:
     word = line.strip()
-    if uses_all(word, 'a e i o u y') == True:
+    if uses_all(word, ['a','e','i','o','u','y']) == True:
         count += 1
 
 answer2 = count

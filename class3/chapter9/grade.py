@@ -129,7 +129,7 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '9.4':
-        if exercise94.uses_only('hello',['h','e','l','o']):
+        if exercise94.uses_only('hello',['h','e','l','o','p']):
             db['submitted'][assignment] = True
             submit('exercise94.py')
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
@@ -149,9 +149,9 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '9.5':
-        if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+        if exercise95.answer2 == 42 and exercise95.uses_all('hello',['h','e','l','o']):
             db['submitted'][assignment] = True
-            submit('exercise91.py')
+            submit('exercise95.py')
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -159,7 +159,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise91.py')
+                submit('exercise95.py')
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
