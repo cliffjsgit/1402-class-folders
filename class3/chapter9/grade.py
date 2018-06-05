@@ -109,9 +109,9 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '9.3':
-        if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+        if exercise93.avoids('feel','e') and sorted(exercise93.lowest_avoidance()) == sorted(['q', 'j', 'x', 'z', 'w']):
             db['submitted'][assignment] = True
-            submit('exercise91.py')
+            submit('exercise93.py')
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -119,7 +119,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise91.py')
+                submit('exercise93.py')
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()

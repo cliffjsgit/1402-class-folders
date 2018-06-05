@@ -23,7 +23,7 @@ __author__ = "Your Name"
 #
 
 
-def avoid(word, forbidden):
+def avoids(word, forbidden):
     for letter in forbidden:
         if word.count(letter) > 0:
             return False
