@@ -50,3 +50,4 @@ def searched_number(number):
 for num in range(100000, 1000000):
     if searched_number(num):
         results.append(num)
+print(results)
