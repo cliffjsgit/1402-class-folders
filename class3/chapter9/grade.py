@@ -89,7 +89,7 @@ def grade(assignment):
                     menu()
     elif assignment == '9.2':
         answer = exercise92.main()
-        if (answer[0] > 37264 and answer[0] < 38017) and (answer[1] > 28 and answer[1] < 38):
+        if (len(answer[0]) > 37264 and len(answer[0]) < 38017) and (answer[1] > 28 and answer[1] < 38):
             db['submitted'][assignment] = True
             submit('exercise92.py')
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
@@ -109,7 +109,7 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '9.3':
-        if exercise93.avoids('feel','e') and sorted(exercise93.lowest_avoidance()) == sorted(['q', 'j', 'x', 'z', 'w']):
+        if exercise93.avoids('feel','k') and sorted(exercise93.lowest_avoidance()) == sorted(['q', 'j', 'x', 'z', 'w']):
             db['submitted'][assignment] = True
             submit('exercise93.py')
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
@@ -129,9 +129,9 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '9.4':
-        if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
+        if exercise94.uses_only('hello',['h','e','l','o']):
             db['submitted'][assignment] = True
-            submit('exercise91.py')
+            submit('exercise94.py')
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -139,7 +139,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise91.py')
+                submit('exercise94.py')
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()

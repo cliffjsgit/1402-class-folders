@@ -43,7 +43,7 @@ def lowest_avoidance():
         a+=1
     for letter in alpha_list:
         for word in open("words.txt"):
-            if not avoid(word.strip(),letter):
+            if not avoids(word.strip(),letter):
                alpha_list[count][1] += 1
         count+=1
     top5 = sorted(alpha_list, key=get_item)[:5]
