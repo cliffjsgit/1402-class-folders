@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 import shelve
+import urllib.request
 
+chapter = "9"
 exercises = ['9.1','9.2','9.3','9.4','9.5','9.6','9.7','9.8']
 loadedList = []
 db = shelve.open('chapter9.db', flag='c', writeback=True)
@@ -70,7 +72,7 @@ def grade(assignment):
     if assignment == '9.1':
         if exercise91.main() == ['counterdemonstrations', 'hyperaggressivenesses', 'microminiaturizations']:
             db['submitted'][assignment] = True
-            submit('exercise91.py')
+            submit('exercise91.py',exercise91.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -78,7 +80,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise91.py')
+                submitbad('exercise91.py',exercise91.__author__)
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
@@ -91,7 +93,7 @@ def grade(assignment):
         answer = exercise92.main()
         if (len(answer[0]) > 37264 and len(answer[0]) < 38017) and (answer[1] > 28 and answer[1] < 38):
             db['submitted'][assignment] = True
-            submit('exercise92.py')
+            submit('exercise92.py',exercise92.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -99,7 +101,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise92.py')
+                submitbad('exercise92.py',exercise92.__author__)
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
@@ -111,7 +113,7 @@ def grade(assignment):
     elif assignment == '9.3':
         if exercise93.avoids('feel','k') and sorted(exercise93.lowest_avoidance()) == sorted(['q', 'j', 'x', 'z', 'w']):
             db['submitted'][assignment] = True
-            submit('exercise93.py')
+            submit('exercise93.py',exercise93.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -119,7 +121,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise93.py')
+                submitbad('exercise93.py',exercise93.__author__)
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
@@ -131,7 +133,7 @@ def grade(assignment):
     elif assignment == '9.4':
         if exercise94.uses_only('hello',['h','e','l','o','p']):
             db['submitted'][assignment] = True
-            submit('exercise94.py')
+            submit('exercise94.py',exercise94.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -139,7 +141,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise94.py')
+                submitbad('exercise94.py',exercise94.__author__)
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
@@ -151,7 +153,7 @@ def grade(assignment):
     elif assignment == '9.5':
         if exercise95.answer2 == 42 and exercise95.uses_all('hello',['h','e','l','o']):
             db['submitted'][assignment] = True
-            submit('exercise95.py')
+            submit('exercise95.py',exercise95.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -159,7 +161,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise95.py')
+                submitbad('exercise95.py',exercise95.__author__)
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
@@ -171,7 +173,7 @@ def grade(assignment):
     elif assignment == '9.6':
         if exercise96.is_abecedarian('abbcdef') and not exercise96.is_abecedarian('cndsfsd'):
             db['submitted'][assignment] = True
-            submit('exercise96.py')
+            submit('exercise96.py',exercise96.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -179,7 +181,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise96.py')
+                submitbad('exercise96.py',exercise96.__author__)
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
@@ -191,7 +193,7 @@ def grade(assignment):
     elif assignment == '9.7':
         if 'bookkeeper' in exercise97.results:
             db['submitted'][assignment] = True
-            submit('exercise97.py')
+            submit('exercise97.py',exercise97.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -199,7 +201,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise97.py')
+                submitbad('exercise97.py',exercise97.__author__)
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
@@ -211,7 +213,7 @@ def grade(assignment):
     elif assignment == '9.8':
         if sorted(exercise98.results) == sorted([198888, 199999]):
             db['submitted'][assignment] = True
-            submit('exercise98.py')
+            submit('exercise98.py',exercise98.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -219,7 +221,7 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submit('exercise98.py')
+                submitbad('exercise98.py',exercise98.__author__)
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
@@ -232,8 +234,19 @@ def grade(assignment):
         print('This should not have happened. Let your instructor know.')
     db.sync()
             
-def submit(file):
-    pass
+def submit(file,name):
+    with open(file,'rb') as fin:
+        assignment = fin.read()
+        url = 'https://1402-answer-repo.s3.amazonaws.com/assignments/'+name+'/'+chapter+'/'+file
+        req = urllib.request.Request(url.replace(' ',''), data=assignment, method='PUT')
+        urllib.request.urlopen(req)
+
+def submitbad(file,name):
+    with open(file,'rb') as fin:
+        assignment = fin.read()
+        url = 'https://1402-answer-repo.s3.amazonaws.com/assignments/'+name+'/'+chapter+'/incorrect/'+file
+        req = urllib.request.Request(url.replace(' ',''), data=assignment, method='PUT')
+        urllib.request.urlopen(req)
             
 def main():
     for exercise in exercises:
