@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 10.2\n")
+# Exercise 10.2
 #
-# Question 1
-# 1. Write a function called cumsum that takes a list of numbers and returns the
+#
+# Grading Guidelines:
+# - No answer variable is needed. Grading script will call function.
+# - Function "cum_sum" should output a list of integers that is a stepping 
+# cumlative sum of all integers in the nested lists.
+#
+# 1. Write a function called cum_sum that takes a list of numbers and returns the
 # cumulative sum; that is, a new list where the ith element is the sum of the 
 # first i + 1 elements from the original list. For example:
 # 
@@ -13,14 +20,10 @@ print("\nExercise 10.2\n")
 # >>> cumsum(t)
 # [1, 3, 6]
 #
-def cumsum(li):
+def cum_sum(li):
     result = []
     total = 0
     for elem in li:
         total += elem
         result.append(total)
     return result
-
-
-t = [1, 2, 3]
-print(cumsum(t))
