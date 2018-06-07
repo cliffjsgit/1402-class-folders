@@ -210,7 +210,7 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()  
     elif assignment == '10.7':
-        if 'bookkeeper' in exercise107.results:
+        if exercise107.has_duplicates([4, 7, 2, 7, 3, 8, 9 ]) and not exercise107.has_duplicates(['b', 'd', 'a', 't']):
             db['submitted'][assignment] = True
             submit('exercise107.py',exercise107.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
@@ -229,10 +229,15 @@ def grade(assignment):
                 str_in = input("Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
-    elif assignment == '10.8':
-        if sorted(exercise108.results) == sorted([198888, 199999]):
+    elif assignment == '10.9':
+        fin = open("words.txt")
+        li = []
+        for line in fin:
+            word = line.strip()
+            li.append(word)
+        if exercise109.version1("words.txt") == li and exercise109.version2("words.txt") == li:
             db['submitted'][assignment] = True
-            submit('exercise108.py',exercise108.__author__)
+            submit('exercise109.py',exercise109.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
             if str_in.lower() == 'y':
                 menu()
@@ -240,7 +245,67 @@ def grade(assignment):
             str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
             if str_in.lower() == 'y':
                 db['submitted'][assignment] = True
-                submitbad('exercise108.py',exercise108.__author__)
+                submitbad('exercise109.py',exercise109.__author__)
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+    elif assignment == '10.10':
+        if sorted(exercise1010.results) == sorted([198888, 199999]):
+            db['submitted'][assignment] = True
+            submit('exercise1010.py',exercise1010.__author__)
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submitbad('exercise1010.py',exercise1010.__author__)
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+    elif assignment == '10.11':
+        if sorted(exercise1011.results) == sorted([198888, 199999]):
+            db['submitted'][assignment] = True
+            submit('exercise1011.py',exercise1011.__author__)
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submitbad('exercise1011.py',exercise1011.__author__)
+                str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+            else:
+                print('Assignment was not submitted')
+                str_in = input("Would you like to submit another? (y/n): ")
+                if str_in.lower() == 'y':
+                    menu()
+    elif assignment == '10.12':
+        if sorted(exercise1012.results) == sorted([198888, 199999]):
+            db['submitted'][assignment] = True
+            submit('exercise1012.py',exercise1012.__author__)
+            str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
+            if str_in.lower() == 'y':
+                menu()
+        else:
+            str_in = input('The exercise answer was incorrect. Did you still want to submit it? (y/n): ')
+            if str_in.lower() == 'y':
+                db['submitted'][assignment] = True
+                submitbad('exercise1012.py',exercise1012.__author__)
                 str_in = input("Exercise submitted. Would you like to submit another? (y/n): ")
                 if str_in.lower() == 'y':
                     menu()
