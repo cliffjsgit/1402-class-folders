@@ -61,9 +61,12 @@ def menu():
                 print('[x] Exercise ' + exercise)
             else:
                 print('[ ] Exercise ' + exercise)
+        print('    Enter q to exit')
         str_in = input('Exercise (e.g. 9.1): ')
         if str_in in loadedList:
             grade(str_in)
+            break
+        elif str_in.lower() == 'q':
             break
         else:
             print('Incorrect response. Only enter the exercise number. Example: "9.1" (no quotes).')

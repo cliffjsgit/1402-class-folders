@@ -24,11 +24,10 @@ __author__ = "Your Name"
 
 
 def avoids(word, forbidden):
-    for letter in forbidden:
-        if word.count(letter) > 0:
+    for letter in word:
+        if letter in forbidden:
             return False
-        else:
-            return True
+    return True
 
 def get_item(x):
     return x[1]

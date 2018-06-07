@@ -33,7 +33,7 @@ count = 0
 
 for line in fin:
     word = line.strip()
-    if uses_all(word, ['a','e','i','o','u','y']) == True:
+    if uses_all(word, ['a','e','i','o','u','y']):
         count += 1
 
 answer2 = count
