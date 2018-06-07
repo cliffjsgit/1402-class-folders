@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 10.3\n")
+# Exercise 10.3
 #
-# Question 1
+#
+# Grading Guidelines:
+# - No answer variable is needed. Grading script will call function.
+# - Function "middle" should output all list elements, but first and last. 
+#
 # 1. Write a function called middle that takes a list and returns a new list 
 # that contains all but the first and last elements. For example:
 #
@@ -14,8 +20,3 @@ print("\nExercise 10.3\n")
 #
 def middle(li):
     return li[1:-1]
-
-
-t = [1, 2, 3, 4]
-ls = middle(t)
-print(ls)

@@ -129,7 +129,7 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '10.3':
-        if exercise103.avoids('feel','k') and sorted(exercise103.lowest_avoidance()) == sorted(['q', 'j', 'x', 'z', 'w']):
+        if exercise103.middle([1, 2, 3, 4]) == [2,3]):
             db['submitted'][assignment] = True
             submit('exercise103.py',exercise103.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
