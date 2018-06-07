@@ -129,7 +129,7 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '10.3':
-        if exercise103.middle([1, 2, 3, 4]) == [2,3]):
+        if exercise103.middle([1, 2, 3, 4]) == [2,3]:
             db['submitted'][assignment] = True
             submit('exercise103.py',exercise103.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
@@ -149,7 +149,8 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '10.4':
-        if exercise104.uses_only('hello',['h','e','l','o','p']):
+        t = [1, 2, 3, 4]
+        if exercise104.chop(t) == None and t == [2,3]:
             db['submitted'][assignment] = True
             submit('exercise104.py',exercise104.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
