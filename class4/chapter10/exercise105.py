@@ -9,7 +9,7 @@ __author__ = "Your Name"
 #
 # Grading Guidelines:
 # - No answer variable is needed. Grading script will call function.
-# - Function "is_sorted" should return a True is list is sorted ascending
+# - Function "is_sorted" should return True if list is sorted ascending
 # or False if otherwise.
 #
 # 1. Write a function called is_sorted that takes a list as a parameter and 
@@ -23,11 +23,3 @@ __author__ = "Your Name"
 #
 def is_sorted(li):
     return li == sorted(li)
-
-
-print(is_sorted([1, 2, 2]))
-print(is_sorted(['b', 'a']))
-print(is_sorted(['a', 'a']))
-print(is_sorted(['a', 'b']))
-print(is_sorted([2, 1]))
-print(is_sorted([1, 2, 3, 4, 3]))

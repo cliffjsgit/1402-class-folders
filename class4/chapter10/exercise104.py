@@ -16,10 +16,3 @@ print("\nExercise 10.4\n")
 def chop(li):
     del li[0]
     del li[-1]
-
-
-t = [1, 2, 3, 4]
-
-print(t)
-print(chop(t))
-print(t)
