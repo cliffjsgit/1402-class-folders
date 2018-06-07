@@ -255,7 +255,7 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '10.10':
-        if sorted(exercise1010.results) == sorted([198888, 199999]):
+        if exercise1010.in_bisect(['aa', 'alien', 'allen', 'zymurgy'], 'alien') == 1:
             db['submitted'][assignment] = True
             submit('exercise1010.py',exercise1010.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
@@ -275,7 +275,12 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '10.11':
-        if sorted(exercise1011.results) == sorted([198888, 199999]):
+        fin = open("words.txt")
+        li = []
+        for line in fin:
+            word = line.strip()
+            li.append(word)
+        if ['aa', 'aa'] in exercise1011.reverse_pair(li):
             db['submitted'][assignment] = True
             submit('exercise1011.py',exercise1011.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
@@ -295,7 +300,12 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '10.12':
-        if sorted(exercise1012.results) == sorted([198888, 199999]):
+        fin = open("words.txt")
+        li = []
+        for line in fin:
+            word = line.strip()
+            li.append(word)
+        if ['ah', 'as', 'aahs'] in exercise1012.interlock(li) and ['pee', 'ors', 'pi', 'poperies'] in exercise1012.three_way_interlock(li):
             db['submitted'][assignment] = True
             submit('exercise1012.py',exercise1012.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
