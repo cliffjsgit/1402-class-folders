@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 10.5\n")
+# Exercise 10.5
 #
-# Question 1
+#
+# Grading Guidelines:
+# - No answer variable is needed. Grading script will call function.
+# - Function "is_sorted" should return a True is list is sorted ascending
+# or False if otherwise.
+#
 # 1. Write a function called is_sorted that takes a list as a parameter and 
 # returns True if the list is sorted in ascending order and False otherwise. 
 # For example:

@@ -150,7 +150,7 @@ def grade(assignment):
                     menu()
     elif assignment == '10.4':
         t = [1, 2, 3, 4]
-        if exercise104.chop(t) == None and t == [2,3]:
+        if exercise104.chop(t) == None and t == [2]:
             db['submitted'][assignment] = True
             submit('exercise104.py',exercise104.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
@@ -170,7 +170,7 @@ def grade(assignment):
                 if str_in.lower() == 'y':
                     menu()
     elif assignment == '10.5':
-        if exercise105.is_sorted([1, 2, 2]) and not xercise105.is_sorted(['b', 'a'])):
+        if exercise105..):
             db['submitted'][assignment] = True
             submit('exercise105.py',exercise105.__author__)
             str_in = input("Exercise answer correct and submitted. Would you like to submit another? (y/n): ")
