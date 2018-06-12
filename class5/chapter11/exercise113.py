@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 11.3\n")
+# Exercise 11.3
 #
-# Question 1
-# 1. Memoize the Ackermann function from Exercise 6.2 and see if memoization 
+#
+# Grading Guidelines:
+# - No answer variable is needed. Grading script will call function.
+# - Function "ackermann" should return an integer
+#
+# 1. Memoize the "ackermann" function from Exercise 6.2 and see if memoization 
 # makes it possible to evaluate the function with bigger arguments. Hint: no.
 # 
-# def ack(m, n):
+# def ackermann(m, n):
 #     '''Ackermann's function;
 #     m, n - integers greater-than-equal 0
 #     '''
@@ -19,7 +25,7 @@ print("\nExercise 11.3\n")
 #     elif m > 0 and n > 0:
 #         return ack(m - 1, ack(m, n - 1))
 #
-# print(ack(3, 4))
+# print(ackermann(3, 4))
 #
 
 cache = {}

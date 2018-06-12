@@ -69,5 +69,3 @@ def in_bisect(word_list, word):
 
 
 word_list = make_word_list()
-
-print(in_bisect(['aa', 'alien', 'allen', 'zymurgy'], 'alien'))

@@ -36,6 +36,4 @@ def version2(file):
         x = line.strip()
         t = t + [x]
 
-
-version1("words.txt")
-version2("words.txt")
+    return t

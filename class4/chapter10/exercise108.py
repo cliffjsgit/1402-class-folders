@@ -79,7 +79,3 @@ def count_matches(num_students, num_simulations):
 num_students = 23
 num_simulations = 1000
 answer = count_matches(num_students, num_simulations)
-
-print('After %d simulations' % num_simulations)
-print('with %d students' % num_students)
-print('there were %d simulations with at least one match' % answer)

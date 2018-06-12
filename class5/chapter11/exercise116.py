@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 11.6\n")
+# Exercise 11.6
 #
-# Question 1
+#
+# Grading Guidelines:
+# - No answer variable is needed. Grading script will call function.
+# - Function "find_homophones" should output list of all words that solve
+# the Puzzler,
+#
 # 1. Here's another Puzzler from Car Talk 
 # (http://www.cartalk.com/content/puzzlers):
 #
@@ -38,8 +45,10 @@ print("\nExercise 11.6\n")
 # dictionary and returns a Python dictionary that maps from each word to a string
 # that describes its primary pronunciation.
 # 
-# Write a program that lists all the words that solve the Puzzler.
+# Write a function "find_homophones" returns a list of all the words that 
+# solve the Puzzler.
 #
+
 ''' Create empty word dictionaries '''
 word_dict = dict()
 pron_dict = dict()

@@ -49,4 +49,3 @@ def reverse_pair(li):
 
 
 li = word_list("words.txt")
-print(reverse_pair(li))
