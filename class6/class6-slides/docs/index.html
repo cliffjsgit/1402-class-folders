@@ -1,26 +1,37 @@
----
-title: 'Class 6: Chapter 12: Tuples'
-separator: '\-\-\-\-\-'
-verticalSeparator: '\+\+\+\+\+'
-theme: 'moon'
-revealOptions:
-    transition: 'fade'
----
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Class 6: Chapter 12: Tuples</title>
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="stylesheet" href="./css/theme/moon.css" id="theme">
+        <link rel="stylesheet" href="./css/highlight/zenburn.css">
+        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
+          <link rel="stylesheet" href="./_assets/assets/custom.css">
+
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
 
 ### ITSE-1402 Intermediate Python
 <span style="font-family:Helvetica Neue; font-weight:bold; color:#e49436">Class 6: Chapter 12: Tuples</span>
 <br /><br />
 ##### [https://coder.run/1402-class6](https://coder.run/1402-class6)
 
------
+</script></section><section ><section data-markdown><script type="text/template">
 
 ##### Chapter 12: Tuples
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 [https://coder.run/1402-chap12](https://coder.run/1402-chap12)
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 #### Testing Knowledge!
 
@@ -30,13 +41,13 @@ revealOptions:
 - What are the 3 ways we discussed to get a object from a dictionary and what are their differences?
 - When you interate through a dictionary, what are you receiving back?
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 ##### Tuples
 
 Tuples are essentially lists and operate the same in many ways as a list, however they are immutable. Meaning they cannot be modified.
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 Empty tuples can be created in two ways:
 - using the built-in function tuple
@@ -47,7 +58,7 @@ myTuple = dict()   # Empty tuple using built-in
 myTuple2 = ()      # Empty tuple using parentheses
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 You can also use the built-in function "tuple" to make a tuple out of an interable object:
 
@@ -56,7 +67,7 @@ t = tuple('hello')
 # t = ('h','e','l','l','o')
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 When defining a tuple with predefined values, it can be done two different ways; both valid:
 
@@ -65,10 +76,8 @@ tuple1 = 1,2,3,4,5,6,7
 tuple2 = (1,2,3,4,5,6,7)
 ```
 
-Note:
-Parentheses around the tuple are optional, however it makes it more easily identifiable.
-
-+++++
+<aside class="notes"><p>Parentheses around the tuple are optional, however it makes it more easily identifiable.</p>
+</aside></script></section><section data-markdown><script type="text/template">
 
 Most list operators also work on tuples. The bracket operator indexes an element:
 
@@ -83,7 +92,7 @@ And the slice operator selects a range of elements.
 t[1:3]
 # ('b','c')
 ```
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 But if you try to modify one of the elements of the tuple, you get an error:
 
@@ -99,7 +108,7 @@ t = ('A',) + t[1:]
 # t = ('A','b','c','d','e')
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 Relational operators work with tuples as well as lists. When comparing Python begins with the first element from each sequence. If they are equal, it goes on to the next elements until it differs.  Elements moving forward are not compared.
 
@@ -110,7 +119,7 @@ Relational operators work with tuples as well as lists. When comparing Python be
 #True
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 You may find that sometimes you need to swap two variables or assign multiple variables at once. You could do it like so:
 
@@ -124,7 +133,7 @@ b = temp
 
 This is not ideal though.
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 Tuple assignment can make this much better:
 
@@ -135,10 +144,8 @@ a,b = b,a
 # b = 1
 ```
 
-Note: 
-The left side is a tuple of variables; the right side is a tuple of expressions. Each value is assigned to its respective variable.  All the expressions on the right side are evaluated before any of the assignments. 
-
-+++++
+<aside class="notes"><p>The left side is a tuple of variables; the right side is a tuple of expressions. Each value is assigned to its respective variable.  All the expressions on the right side are evaluated before any of the assignments.</p>
+</aside></script></section><section data-markdown><script type="text/template">
 
 The number of variables on each side of the tuple assignment must be the same or you will get an error:
 
@@ -147,7 +154,7 @@ a,b = 1,2,3
 # ValueError: too many values to unpack
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 This right portion can be any type of sequence. An example of this would be an email address:
 
@@ -158,7 +165,7 @@ user,domain = email.split('@')
 # domain = domain.com
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 When working with functions, there can only be one value returned. This changes when you introduce tuples. This can be seen with the built-in function "divmod".
 
@@ -175,7 +182,7 @@ quot,rem = divmod(7,3)
 # rem = 1
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 The way this concept would look in a function is like so:
 
@@ -184,7 +191,7 @@ def min_max(t):
     return min(t),max(t)
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 <pre class="stretch"><code class="python" data-trim data-noescape>
 #!/usr/bin/env python3
@@ -199,7 +206,7 @@ def min_max(t):
 # http://en.wikipedia.org/wiki/Letter_frequencies
 </code></pre>
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 We've seen that tuples can help with returning elements, but they can also help with intaking them also:
 
@@ -211,12 +218,10 @@ print_all(1,2.0,'3')
 # (1,2.0,'3')
 ```
 
-Note: 
-When you add an argument to a function definition with a * preceding the word, it takes a variable number of arguments.
-This can be combined with other arguments and anything after the static number is taken in as "args", a tuple
-"args" is the conventional word to use there, but you can use any word that would work as a variable there.
-
-+++++
+<aside class="notes"><p>When you add an argument to a function definition with a * preceding the word, it takes a variable number of arguments.
+This can be combined with other arguments and anything after the static number is taken in as &quot;args&quot;, a tuple
+&quot;args&quot; is the conventional word to use there, but you can use any word that would work as a variable there.</p>
+</aside></script></section><section data-markdown><script type="text/template">
 
 This same concept can be used on the other side of the function as well. This is called "scatter".
 
@@ -229,10 +234,8 @@ divmod(*t)
 # (2,1)
 ```
 
-Note:
-Divmod normally requires two variables, but scatter will separate the tuple into individual values
-
-+++++
+<aside class="notes"><p>Divmod normally requires two variables, but scatter will separate the tuple into individual values</p>
+</aside></script></section><section data-markdown><script type="text/template">
 
 Depending on the function you run, some will take a variable number of arguments, but others will not. Refer to the documentation of the function to verify.
 
@@ -247,10 +250,8 @@ sum(1,2,3)
 # TypeError: sum expected at most 2 arguments, got 3
 ```
 
-Note:
-Max and Min are examples of functions that take a variable number of arguments. Sum is one that does not.
-
-+++++
+<aside class="notes"><p>Max and Min are examples of functions that take a variable number of arguments. Sum is one that does not.</p>
+</aside></script></section><section data-markdown><script type="text/template">
 
 ```python
 Write a function called "sumall" that
@@ -258,10 +259,8 @@ takes any number of arguments and
 returns their sum.
 ```
 
-Note:
-Not an official exercise, but let's think it through.
-
-+++++
+<aside class="notes"><p>Not an official exercise, but let&#39;s think it through.</p>
+</aside></script></section><section data-markdown><script type="text/template">
 
 zip is a built-in function that uses tuples to create pairs of objects between two or more iterables
 
@@ -272,10 +271,8 @@ zip(s,t)
 <zip object at 0x7f7d0a9e7c48>
 ```
 
-Note:
-The result is a zip object, not an actual list. You cannot reference a zip in it's native form with an index.
-
-+++++
+<aside class="notes"><p>The result is a zip object, not an actual list. You cannot reference a zip in it&#39;s native form with an index.</p>
+</aside></script></section><section data-markdown><script type="text/template">
 
 Assuming you want to see the objects in the zip, this would be one way to do that:
 
@@ -288,7 +285,7 @@ for pair in zip(s,t):
 #('c',2)
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 If you would like to work with a zip as a list, it is rather simple to do:
 
@@ -297,7 +294,7 @@ list(zip(s,t))
 #[('a',0),('b',1),('c',2)]
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 Assuming you have two iterables with different lengths that you zip, it will be the lenght of the shortest interable and drop the rest:
 
@@ -306,7 +303,7 @@ list(zip('Anne','Elk'))
 [('A','E'),('n','l'),('n','k')]
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 Dictionaries have a method called items that returns a sequence of tuples where each is the key,value pair from the dictionary.
 
@@ -318,7 +315,7 @@ t = d.items()
 
 The result is a dict_items object, which is an iterator that iterates the key-value pairs. 
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 You can interate through d.items() like so:
 
@@ -330,7 +327,7 @@ for key, value in d.items():
 # b 1
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 You can also use a list of tuples to initialize a new dictionary:
 
@@ -340,7 +337,7 @@ d = dict(t)
 # d = {'a': 0, 'c': 2, 'b': 1}
 ```
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
 Along the same lines, you can also use zip to make a dictionary:
 
@@ -349,10 +346,8 @@ d = dict(zip('abc', range(3)))
 # d = {'a': 0, 'c': 2, 'b': 1}
 ```
 
-Note: 
-There is also a dictionary method update takes a list of tuples and adds them, as key-value pairs, to an existing dictionary.
-
-+++++
+<aside class="notes"><p>There is also a dictionary method update takes a list of tuples and adds them, as key-value pairs, to an existing dictionary.</p>
+</aside></script></section><section data-markdown><script type="text/template">
 
 It is common to use tuples as keys in dictionaries (primarily because you can’t use lists).
 
@@ -363,10 +358,8 @@ for last, first in directory:
     print(first, last, directory[last,first])
 ```
 
-Note: 
-For example, a telephone directory might map from last-name, first-name pairs to telephone numbers. Assuming that we have defined last, first and number, we could write:
-
-+++++
+<aside class="notes"><p>For example, a telephone directory might map from last-name, first-name pairs to telephone numbers. Assuming that we have defined last, first and number, we could write:</p>
+</aside></script></section><section data-markdown><script type="text/template">
 
 <pre class="stretch"><code class="python" data-trim data-noescape>
 #!/usr/bin/env python3
@@ -411,6 +404,59 @@ For example, a telephone directory might map from last-name, first-name pairs to
 # 
 </code></pre>
 
-+++++
+</script></section><section data-markdown><script type="text/template">
 
-Exercise 12.3 and 12.4 are homework. You may do a CodeFights Challenge for extra credit
+Exercise 12.3 and 12.4 are homework. You may do a CodeFights Challenge for extra credit</script></section></section></div>
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: './plugin/zoom-js/zoom.js', async: true },
+              { src: './plugin/notes/notes.js', async: true },
+              { src: './plugin/math/math.js', async: true }
+            ];
+
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default', // none/fade/slide/convex/concave/zoom
+              dependencies: deps
+            };
+
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+
+            var options = {"transition":"fade"};
+            options = extend(defaultOptions, options, queryOptions);
+        </script>
+
+
+        <script>
+            Reveal.initialize(options);
+        </script>
+    </body>
+</html>

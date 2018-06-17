@@ -36,7 +36,8 @@ def rotate_word(word, n):
         rotated_word += chr(ord(letter) + n)
     return rotated_word
 
-def rotate_pair(mydict):
+def rotate_pair(file):
+    mydict = make_dict(file)
     pair = {}
     for n in range(1, 26):  
         for word in mydict:
@@ -48,6 +49,4 @@ def rotate_pair(mydict):
                     
     return pair             
 
-
-mydict = make_dict("words.txt")
-print(rotate_pair(mydict))
+print(rotate_pair("words.txt"))

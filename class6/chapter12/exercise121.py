@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 12.1\n")
+# Exercise 12.1
 #
-# Question 1
-# 1. Write a function called most_frequent that takes a string and prints the 
-# letters in decreasing order of frequency. Find text samples from several 
-# different languages and see how letter frequency varies between languages. 
-# Compare your results with the tables at:
+#
+# Grading Guidelines:
+# - No answer variable is needed. Grading script will call function.
+# - Function "most_frequent" should output a list of letters in decreasing
+# order of frequency
+#
+# 1. Write a function called "most_frequent" that takes a file and returns 
+# a list of letters in decreasing order of frequency. 
+#
+# Use emma.txt to test this function. Compare your results with the tables at:
 # http://en.wikipedia.org/wiki/Letter_frequencies
 #
 def most_frequent(s):
@@ -41,5 +48,4 @@ def read_file(filename):
 if __name__ == '__main__':
     string = read_file('emma.txt')
     letter_seq = most_frequent(string)
-    for x in letter_seq:
-        print(x)
+    print(letter_seq)
