@@ -1,58 +1,152 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 13.6\n")
+# Exercise 13.6
 #
-# Question 1
-# 1. Python provides a data structure called set that provides many common set 
-# operations. You can read about them in "Sets", or read the documentation at 
-# http://docs.python.org/3/library/stdtypes.html#types-set.
 #
-# Write a program that uses set subtraction to find words in the book that are 
-# not in the word list.
+# Grading Guidelines:
+# - No answer variable is needed. Grading script will call function.
+# - Function "choose_from_hist" should return a random value from the 
+# histogram, chosen with probability in proportion to frequency
+# 
+# 1. Write a program to read a text from a file and perform Markov analysis. 
+# The result should be a dictionary that maps from prefixes to a collection of
+# possible suffixes. The collection might be a list, tuple, or dictionary; it 
+# is up to you to make an appropriate choice. You can test your program with 
+# prefix length 2, but you should write the program in a way that makes it easy
+# to try other lengths.
 #
 
+#
+# Question 2
+# 2. Add a function to the previous program to generate random text based on 
+# the Markov analysis. Here is an example from Emma with prefix length 2:
+# 
+#     He was very clever, be it sweetness or be angry, ashamed or only amused,
+#     at such a stroke. She had never thought of Hannah till you were never
+#     meant for me? I cannot make speeches, Emma: he soon cut it all himself.
+#
+# For this example, I left the punctuation attached to the words. The result is
+# almost syntactically correct, but not quite. Semantically, it almost "makes
+# sense, but not quite.
+# 
+# What happens if you increase the prefix length? Does the random text make
+# more sense?
+# 
+
+#
+# Question 3
+# 3. Once your program is working, you might want to try a mash-up: if you
+# combine text from two or more books, the random text you generate will blend 
+# the vocabulary and phrases from the sources in interesting ways.
+# 
+import sys
+import string
 import random
 
-from bisect import bisect
+# global variables
+suffix_map = {}        # map from prefixes to a list of suffixes
+prefix = ()            # current tuple of words
 
-from analyze_book1 import process_file
 
+def process_file(filename, order=2):
+    """Reads a file and performs Markov analysis.
 
-def random_word(hist):
-    """Chooses a random word from a histogram.
+    filename: string
+    order: integer number of words in the prefix
 
-    The probability of each word is proportional to its frequency.
-
-    hist: map from word to frequency
+    returns: map from prefix to list of possible suffixes.
     """
-    # TODO: This could be made faster by computing the cumulative
-    # frequencies once and reusing them.
+    fp = open(filename)
+    skip_gutenberg_header(fp)
 
-    words = []
-    freqs = []
-    total_freq = 0
-
-    # make a list of words and a list of cumulative frequencies
-    for word, freq in hist.items():
-        total_freq += freq
-        words.append(word)
-        freqs.append(total_freq)
-
-    # choose a random value and find its location in the cumulative list
-    x = random.randint(0, total_freq-1)
-    index = bisect(freqs, x)
-    return words[index]
+    for line in fp:
+        for word in line.rstrip().split():
+            process_word(word, order)
 
 
-def main():
-    hist = process_file('emma.txt', skip_header=True)
+def skip_gutenberg_header(fp):
+    """Reads from fp until it finds the line that ends the header.
 
-    print("\n\nHere are some random words from the book")
-    for i in range(100):
-        print(random_word(hist), end=' ')
+    fp: open file object
+    """
+    for line in fp:
+        if line.startswith('*END*THE SMALL PRINT!'):
+            break
+
+
+def process_word(word, order=2):
+    """Processes each word.
+
+    word: string
+    order: integer
+
+    During the first few iterations, all we do is store up the words; 
+    after that we start adding entries to the dictionary.
+    """
+    global prefix
+    if len(prefix) < order:
+        prefix += (word,)
+        return
+
+    try:
+        suffix_map[prefix].append(word)
+    except KeyError:
+        # if there is no entry for this prefix, make one
+        suffix_map[prefix] = [word]
+
+    prefix = shift(prefix, word)
+
+
+def random_text(n=100):
+    """Generates random wordsfrom the analyzed text.
+
+    Starts with a random prefix from the dictionary.
+
+    n: number of words to generate
+    """
+    # choose a random prefix (not weighted by frequency)
+    start = random.choice(list(suffix_map.keys()))
+    
+    for i in range(n):
+        suffixes = suffix_map.get(start, None)
+        if suffixes == None:
+            # if the start isn't in map, we got to the end of the
+            # original text, so we have to start again.
+            random_text(n-i)
+            return
+
+        # choose a random suffix
+        word = random.choice(suffixes)
+        print(word, end=' ')
+        start = shift(start, word)
+
+
+def shift(t, word):
+    """Forms a new tuple by removing the head and adding word to the tail.
+
+    t: tuple of strings
+    word: string
+
+    Returns: tuple of strings
+    """
+    return t[1:] + (word,)
+
+
+def main(script, filename='emma.txt', n=100, order=2):
+    try:
+        n = int(n)
+        order = int(order)
+    except ValueError:
+        print('Usage: %d filename [# of words] [prefix length]' % script)
+    else: 
+        process_file(filename, order)
+        random_text(n)
+        print()
 
 
 if __name__ == '__main__':
-    main()
+    main(*sys.argv)

@@ -40,10 +40,10 @@ Tuples are essentially lists and operate the same in many ways as a list, howeve
 
 Empty tuples can be created in two ways:
 - using the built-in function tuple
-- using braces
+- using parentheses
 
 ```python
-myTuple = dict()   # Empty tuple using built-in
+myTuple = tuple()   # Empty tuple using built-in
 myTuple2 = ()      # Empty tuple using parentheses
 ```
 
