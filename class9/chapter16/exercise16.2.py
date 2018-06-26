@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 16.2\n")
-
-from Time1 import *
+# Exercise 16.2
 #
-# Question 1
+#
 # 1. The datetime module provides time objects that are similar to the Time 
 # objects in this chapter, but they provide a rich set of methods and operators.
 # Read the documentation at http://docs.python.org/3/library/datetime.html.
 #
+
+from Time1 import *
 from datetime import datetime
 #
-# Question 2
 # 2. Use the datetime module to write a program that gets the current date and 
 # prints the day of the week. Write a program that takes a birthday as input and
 # prints the user's age and the number of days, hours, minutes and seconds until
@@ -42,7 +43,6 @@ last_bday = next_bday.replace(year=next_bday.year-1)
 age = last_bday.year - bday.year
 print(age)
 #
-# Question 3
 # 3. For two people born on different days, there is a day when one is twice as 
 # old as the other. That's their Double Day. Write a program that takes two 
 # birthdays and computes their Double Day.
@@ -59,7 +59,6 @@ d2 = max(bday1, bday2)
 dd = d2 + (d2 - d1)
 print(dd)
 #
-# Question 4
 # 4. For a little more challenge, write the more general version that computes 
 # the day when one person is n times older than the other.
 # 

@@ -50,4 +50,4 @@ def choose_from_hist(file):
 
     return random.choice(t)
     
-choose_from_hist("emma.txt")
+print(choose_from_hist("emma.txt"))

@@ -45,4 +45,4 @@ def strip_and_lower(file):
             res[key] = None
     return res
 
-strip_and_lower("emma.txt")
+print(strip_and_lower("emma.txt"))

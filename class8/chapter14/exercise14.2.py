@@ -1,11 +1,21 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 14.2\n")
+# Exercise 14.2
 #
-# Question 1
-# 1. If you download my solution to Exercise 12-2 from 
+#
+# Grading Guidelines:
+# - No answer variable is needed. Grading script will call function.
+# - Function "store_anagrams" should take in a dictionary file specified in 
+# the arguments, pass it to the function in "anagram_sets" that will generate
+# an anagram dictiontionary, and then write it to a shelve.
+# - Function "read_anagrams" should take in a shelve file as well as a word
+# and then returns a list of anagrams.
+# 
+# 1. If you download the solution to Exercise 12-2 from 
 # http://thinkpython2.com/code/anagram_sets.py, you'll see that it creates a 
 # dictionary that maps from a sorted string of letters to the list of words that
 # can be spelled with those letters. For example, 'opst' maps to the list 

@@ -46,4 +46,5 @@ def word_distance(word1, word2):
 
 if __name__ == '__main__':
     sets = anagram_sets.all_anagrams('words.txt')
-    metathesis_pairs(sets)
+    print(metathesis_pairs(sets))
+    

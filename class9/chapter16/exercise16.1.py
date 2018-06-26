@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
+__author__ = "Your Name"
+
 ###############################################################################
 #
-print("\nExercise 16.1\n")
+# Exercise 16.1
 #
-# Question 1
+#
 # 1. Write a function called mul_time that takes a Time object and a number and
 # returns a new Time object that contains the product of the original Time and 
 # the number.
