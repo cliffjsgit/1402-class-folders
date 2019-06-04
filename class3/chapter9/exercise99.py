@@ -46,7 +46,7 @@ def num_instances(diff, flag=False):
     count = 0
     while True:
         mother = daughter + diff
-        if are_reversed(daughter, mother) or are_reversed(daughter, mother+1):
+        if are_reversed(daughter, mother) or are_reversed(daughter, mother+1) or are_reversed(daughter+1, mother):
             count = count + 1
             if flag:
                 print(daughter, mother)
@@ -69,4 +69,4 @@ check_diffs()
 
 print()
 print('daughter  mother')
-num_instances(17, True)
+num_instances(18, True)
