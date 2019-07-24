@@ -10,3 +10,69 @@ Topics:
 --- Copy and Deep Copy
 --- Append, Extend, Multiply, Add
 --- Slices
+
+Email:
+    Hello Class,
+    
+    There were no assignments due today. We discussed lists, interations, and working with files. There is two problems for homework tonight: 10.11 and 10.12. 
+    
+    This Class:
+    Class 4 Slides: https://bit.ly/1402-class4
+    Chapter 10 Repo: https://bit.ly/1402-chap10
+    
+    Next Class:
+    Chapter 11
+    
+    Resources:
+    Syllabus: https://github.com/ITSE-1402/syllabus
+    Project 1: https://bit.ly/1402-project1
+    Project 1 Repo: https://bit.ly/1402-project1-repo
+    
+    
+    Below is some information on working with the project and attached are the project files from class to use as an example. To further elaborate on what these commands do; when you are working on a project and need to install 3rd party libraries, you want to make sure that you isolate these libraries that you install from other projects. You also want an easy way to export into a list so you can tell others what libraries you used (and they need to install to run). 
+    
+    This is where virtual environments come into play. When you make and enter into one, anything you install remains in that environment only. Once done working on the project you `deactivate` it to exit. When you want to pick back up working on it, you `source bin/activate` to bring it back up. Detailed instructions below:
+    
+    ==================================================
+    
+    Creating/using a virtual environment for the project
+    
+    First Run:
+    1. Open terminal in Cloud9
+    2. Run the following command to change directory: 
+    cd ~/environment/project-name              (where project-name is the name of your repo)
+    3. Run the following command to create a virtual environment in your project directory: 
+    virtualenv -p python3 .
+    4. Run the following command to activate the virtual environment: 
+    source bin/activate
+    5. Install any modules you may need
+    pip3 install bs4 requests
+    6. Write your requirements.txt file:
+    pip3 freeze > requirements.txt
+    7. Write the project and then when you are ready to test it, run from command line (run button will not work): 
+    python3 myfile.py
+    8. Once done working and testing your project, run: 
+    deactivate
+    
+    Subsequent Runs (to work on/run project):
+    1. Open terminal in Cloud9
+    2. Run the following command to change directory: 
+    cd ~/environment/project-name              (where project-name is the name of your repo)
+    3. Run the following command to activate the virtual environment: 
+    source bin/activate
+    4. Write the project and then when you are ready to test it, run from command line (run button will not work): 
+    python3 myfile.py
+    5. Once done working and testing your project, run: 
+    deactivate
+    
+    ==================================================
+    
+    Feel free to commit the entirety of your virtual environment to github as you are working, but if you want to limit it you can either add the files individually or look into .gitignore. Neither are required.
+    
+    Reminder: All extra credit should be placed in the extra credit repo. It is not part of the grading script.
+    
+    --
+    Philip Ulrich
+    Instructor
+    ITSE-1402 - Intermediate Python
+    Austin Community College
