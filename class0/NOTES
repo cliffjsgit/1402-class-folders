@@ -1,0 +1,92 @@
+Pre-Class:
+
+1. Update syllabus to include new dates, topics, location, etc. Just update the readme.md in https://itse-1402.github.io/syllabus/. The site will update within a few minutes on it's own. 
+2. Send email to students with their emails in BCC. Example email:
+    Hello Everyone,
+    
+    My name is Philip Ulrich and I will be your instructor for ITSE 1402 - Intermediate Python. Our first class is [date] and I wanted to shoot you some information over for the class.
+    
+    If you have not yet, please review the syllabus for this class posted online: https://itse-1402.github.io/syllabus/. This will be a loose guideline for how our class will work as well as our schedule. It will change, but I will try to keep you informed as it changes. Along the same lines, please do know that I try to keep this class pretty laid back. The syllabus explains "expectations", but if life gets busy and you need to turn in an assignment late, that is fine. If you find some of the material not to be beneficial to you, I won't be upset if you choose not participate in it. This class is not accredited and the grades are ultimately a pass/fail (though I keep track of a letter if you are interested in it). What you get out of it is up to you and I will try to make myself available to assist you with anything python as much as I can both during and even after the class. 
+    
+    During our class we use a tool called "Cloud9" which is an online IDE. This allows us to have a uniform environment and is usable from anywhere. This tool is a part of AWS and a login to an environment will be provided for you during our first class. Please be aware that these Cloud9 instances are on my account and I will end up paying for them so don't do anything shady or I will remove your access and make you get your own. :) 
+    
+    A github.com account is required for this class, so if you don't have one either create one before class otherwise we will have some time to do it in class. 
+    
+    Thanks and I look forward to meeting you all soon!
+    
+    --
+    Philip Ulrich
+    Instructor
+    ITSE-1402 - Intermediate Python
+    Austin Community College
+3. Create Cloud 9 workspaces, users, etc.
+    a. Login to AWS Console
+    b. Create new users for number of students (plus a few, users don't cost $$ so it's good to have extra)
+        i.    Go to https://console.aws.amazon.com/iam/home#/users$new?step=details
+        ii.   Click "Add another user" for as many users as needed
+        iii.  Click "AWS Management Console access", leave password as auto generate.
+        iv.   Leave option "Users must create a new password at next sign-in" checked. 
+        v.    Click "Next: Permissions"
+        vi.   Add Users to group, create a new group, name it students. Don't select any policies. Select "Create group". If group already created from old class; use this and don't recreate one.
+        vii.  Ensure Group is selected, click "Next: Tags".
+        viii. Click "Next: Review". 
+        ix.   Click "Create Users"
+        x.    Click "Download .csv". You will share user credentials with students individually. I would suggest clicking "Send Email" and use that as a template.
+    c. Update bit.ly/1402-idelogin link with console login provided  (Only needed first time this is done for each new AWS account)
+    d. (if created new group) Go to https://console.aws.amazon.com/iam/home#/groups. Click your group (this should open a new window). 
+    e. Click Permissions, Create Group Policy, Custom Policy, Select. Give it a name. Paste the below into text field and "Apply Policy":
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "Stmt1560291294000",
+              "Effect": "Allow",
+              "Action": [
+                "cloud9:DescribeEnvironmentStatus",
+                "cloud9:DescribeEnvironments",
+                "cloud9:ListEnvironments",
+                "cloud9:UpdateEnvironment",
+                "cloud9:ValidateEnvironmentName",
+                "cloud9:DescribeEnvironmentMemberships",
+                "cloud9:UpdateEnvironment"
+              ],
+              "Resource": [
+                "*"
+              ]
+            }
+          ]
+        }
+    f. Create a workspace for each student
+        i. Go to https://us-east-1.console.aws.amazon.com/cloud9/home/product
+        ii. For each user:
+            1. Click "Create environment"
+            2. Enter name, "next step"
+            3. Default options, "next step"
+            4. "Create environment"
+            5. Wait for create, and click "Share"
+            6. Invite the IAM user for the student, RW
+            7. Security Warning should pop up, click advanced options, click Disable AWS managed credentials, click okay
+4. Send emails from step 3 to students individually.
+5. Update slides for Class 1 (and others as necessary, steps are the same)
+    a. If using a new workspace, do the following:
+        i.   Complete ssh-keygen, default options
+        ii.  Add .ssh/id_rsa.pub to github profile
+        iii. Install reveal2md so you can update slides
+            1. run the following in cloud9 terminal:
+                sudo yum install -y gcc-c++ make
+                curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
+                sudo yum install nodejs
+                sudo npm install -g reveal-md
+    b. Clone down the github repository for the slides you want to modify
+    c. Make modifications
+    d. (while in root of repository folder) run "make". It should build the slides.
+    e. git add, git commit, git push
+    f. slides should update within a few minutes
+
+
+
+Note:
+- Historical exercise answers, class files, etc can be found in these repositories. I used to create one per class and give students access.. adding to it as we did the chapters.
+-- https://github.com/ITSE-1402/class-resources
+-- https://github.com/ITSE-1402/class-resources-spring-2017
+-- https://github.com/ITSE-1402/class-resources-fall-2017

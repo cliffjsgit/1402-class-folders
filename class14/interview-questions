@@ -1,38 +1,45 @@
-Given a list of 200 random integers 1-9, find the most frequently occurring integer.
-Write a multiply function that multiples 2 integers without using the multiply operator.
-Using a class, create a queue to handle jobs. Include methods to show all jobs using print, queue new jobs, and grab queued jobs (removing them)?
-Given 2 integer lists, determine of the 2nd list is a rotated version of the 1st list. E.g. list1=[1,2,3,4,5,6,7,8] list2=[4,5,6,7,8,1,2,3]
-Write a function that takes a file path, reading it line by line, and replacing the string "foo" with the string "bar".
+- Given a list of 200 random integers 1-9, find the most frequently occurring integer.
+- Write a multiply function that multiples 2 integers without using the multiply operator.
+- How do you find the duplicate number on a given integer array?
+- Using a class, create a queue to handle jobs. Include methods to show all jobs using print, queue new jobs, and grab queued jobs (removing them)?
+- How do you find the largest and smallest number in an unsorted list of integers?
+- Given 2 integer lists, determine of the 2nd list is a rotated version of the 1st list. E.g. list1=[1,2,3,4,5,6,7,8] list2=[4,5,6,7,8,1,2,3]
+- Write a function that takes a file path, reading it line by line, and replacing the string "foo" with the string "bar".
+- How do you find the missing number in a given integer array of 1 to 100?
+- How do you print the first non-repeated character from a string?
+- Using a class, how would you design a vending machine?
 
 
-1. What is your greatest strength? - Best Answers
+
+
+- 1. What is your greatest strength? - Best Answers
 This is one of the questions that employers almost always ask. When you are asked about your greatest strengths, it's important to discuss the attributes that will qualify you for the specific job and set you apart from the other candidates.
 
-2. What is your greatest weakness? - Best Answers
+- 2. What is your greatest weakness? - Best Answers
 Another typical question interviewers will ask is about your weaknesses. Do your best to frame your answers around positive aspects of your skills and abilities as an employee.
 
-3. Tell me about yourself. - Best Answers
+- 3. Tell me about yourself. - Best Answers
 Here’s how to answer questions about you without giving out too much – or too little – personal information.
-
 Start by sharing some of your personal interests which don't relate directly to work.
-
-4. Why should we hire you? - Best Answers
+ 
+- 4. Why should we hire you? - Best Answers
 Are you the best candidate for the job? Be prepared to say why.  Make your response a concise sales pitch that explains what you have to offer the employer, and why you should get the job.
 
-5. What are your salary expectations? - Best Answers
+- 5. What are your salary expectations? - Best Answers
 What are you looking for in terms of salary? It seems like a simple question, but your answer can knock you out of content for the job if you overprice yourself. Here's the best way to answer questions about salary.
 
-6. Why are you leaving or have left your job? - Best Answers
+- 6. Why are you leaving or have left your job? - Best Answers
 When asked about why you are moving on, stick with the facts, be direct and focus your interview answer on the future, especially if your leaving wasn't under the best of circumstances.
 
-7. Why do you want this job? - Best Answers
+- 7. Why do you want this job? - Best Answers
 This question gives you an opportunity to show the interviewer what you know about the job and the company. Be specific about what makes you a good fit for this role, and mention aspects of the company and position that appeal to you.
-
-8. How do you handle stress and pressure? - Best Answers
+M
+- 8. How do you handle stress and pressure? - Best Answers
 What do you do when things don’t go smoothly at work? The best way to respond to this question is to give an example of how you have handled stress in a previous job.
 
-9. Describe a difficult work situation / project and how you overcame it. - Best Answers
+- 9. Describe a difficult work situation / project and how you overcame it. - Best Answers
 The interviewer wants to know what you do when you face a difficult decision. As with the question about stress, be prepared to share an example of what you did in a tough situation.
 
-10. What are your goals for the future? - Best Answers
+- 10. What are your goals for the future? - Best Answers
 This question is designed to find out if you’re going to stick around or move on as soon as you find a better opportunity. Keep your answer focused on the job and the company you’re interviewing with.
+
